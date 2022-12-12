@@ -29,6 +29,7 @@
     "build": "react-scripts build",
     "build-all": "cd functions && npm run build && cd .. && npm run build",
     "dev": "conc 'npm start' 'cd functions && npm run watch' 'cd functions && npm run serve'",
+    "lint": "eslint --ext .js,.ts,.tsx .",
     "serve": "npm run build-all && firebase emulators:start",
     "deploy": "npm run build && firebase deploy --only hosting",
     "deploy-all": "npm run build && firebase deploy",
@@ -38,8 +39,32 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "eslint:recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:import/typescript",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "ignorePatterns": [
+      "/build/**/*",
+      "/functions/lib/**/*"
+    ],
+    "rules": {
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/explicit-module-boundary-types": [
+        "off",
+        {
+          "allowArgumentsExplicitlyTypedAsAny": true
+        }
+      ],
+      "import/no-duplicates": [
+        "off",
+        {
+          "considerQueryString": true
+        }
+      ]
+    }
   },
   "browserslist": {
     "production": [
