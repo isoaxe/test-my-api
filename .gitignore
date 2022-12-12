@@ -29,8 +29,8 @@ ui-debug.log*
 # Firebase functions:
 
 # Compiled JavaScript files
-lib/**/*.js
-lib/**/*.js.map
+*/lib/**/*.js
+*/lib/**/*.js.map
 
 # TypeScript v1 declaration files
 typings/
