@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="App">
-      <UrlSubmitter />
+      <UrlSubmitter proxyUrl={proxyUrl} />
       <ProxySelector proxyUrl={proxyUrl} setProxyUrl={setProxyUrl} />
     </div>
   );

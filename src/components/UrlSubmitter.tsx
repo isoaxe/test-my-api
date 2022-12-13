@@ -1,8 +1,10 @@
 import { useState, ChangeEvent, SyntheticEvent } from "react";
 import { Box, TextField, Button } from "@mui/material";
 
-function UrlSubmitter() {
+function UrlSubmitter(props: any) {
   const [apiUrl, setApiUrl] = useState("");
+
+  const { proxyUrl } = props;
 
   function handleApiUrl(event: ChangeEvent<HTMLInputElement>): void {
     setApiUrl(event.currentTarget.value);
@@ -12,7 +14,7 @@ function UrlSubmitter() {
     event.preventDefault();
     let response;
     try {
-      response = await fetch(apiUrl);
+      response = await fetch(proxyUrl + apiUrl);
     } catch (error) {
       console.log("Result: API fetch request has failed");
       console.error(error);
