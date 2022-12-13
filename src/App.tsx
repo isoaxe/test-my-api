@@ -1,10 +1,10 @@
-import ApiRequestUi from "./components/ApiRequestUi";
+import UrlSubmitter from "./components/UrlSubmitter";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <ApiRequestUi />
+      <UrlSubmitter />
     </div>
   );
 }

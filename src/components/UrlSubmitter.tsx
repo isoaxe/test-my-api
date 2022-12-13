@@ -1,7 +1,7 @@
 import { useState, ChangeEvent, SyntheticEvent } from "react";
 import { Box, TextField, Button } from "@mui/material";
 
-function ApiRequestUi() {
+function UrlSubmitter() {
   const [apiUrl, setApiUrl] = useState("");
 
   function handleApiUrl(event: ChangeEvent<HTMLInputElement>): void {
@@ -42,7 +42,7 @@ function ApiRequestUi() {
   );
 }
 
-export default ApiRequestUi;
+export default UrlSubmitter;
 
 const wrapperStyle = {
   display: "flex",
