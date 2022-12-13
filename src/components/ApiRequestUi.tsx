@@ -10,13 +10,21 @@ function ApiRequestUi() {
 
   async function submitApiUrl(event: SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
+    let response;
     try {
-      const response = await fetch(apiUrl);
-      const jsonRes = await response.json();
-      console.log(jsonRes);
+      response = await fetch(apiUrl);
     } catch (error) {
-      console.error(`API request has failed: ${error}`);
+      console.log("Result: API fetch request has failed");
+      console.error(error);
     }
+    if (response)
+      try {
+        const jsonRes = await response.json();
+        console.log(jsonRes);
+      } catch (error) {
+        console.log("Result: API request succeeded, but failed to parse JSON");
+        console.error(error);
+      }
   }
 
   return (
