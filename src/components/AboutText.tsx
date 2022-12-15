@@ -14,7 +14,10 @@ function AboutText() {
         Currently can only send a GET request to your server. Results are logged
         in the browser console for now. Any comments or feature requests, let me
         know in the contact form on my{" "}
-        <a href="https://www.lucasoconnell.net" target="_blank">
+        <a
+          href="https://www.lucasoconnell.net"
+          target="_blank"
+          rel="noopener noreferrer">
           website
         </a>
         .
