@@ -1,7 +1,7 @@
 import { ChangeEvent } from "react";
 import { Radio, RadioGroup } from "@mui/material";
 import { FormControlLabel, FormControl, FormLabel } from "@mui/material";
-import { FIREBASE_PROXY } from "../util/urls";
+import { FIREBASE_PROXY, FLY_PROXY } from "../util/urls";
 
 function ProxySelector(props: any) {
   const { proxyUrl, setProxyUrl } = props;
@@ -23,6 +23,11 @@ function ProxySelector(props: any) {
           value={FIREBASE_PROXY}
           control={<Radio />}
           label="Firebase"
+        />
+        <FormControlLabel
+          value={FLY_PROXY}
+          control={<Radio />}
+          label="Fly.io"
         />
       </RadioGroup>
     </FormControl>
