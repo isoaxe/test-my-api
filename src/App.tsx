@@ -11,6 +11,8 @@ function App() {
     <div className="App">
       <HeadingText />
       <UrlSubmitter proxyUrl={proxyUrl} />
+      <UrlSubmitter proxyUrl={proxyUrl} />
+      <UrlSubmitter proxyUrl={proxyUrl} />
       <ProxySelector proxyUrl={proxyUrl} setProxyUrl={setProxyUrl} />
     </div>
   );
