@@ -51,10 +51,10 @@ const wrapperStyle = {
   flexDirection: "row",
   alignItems: "center",
   justifyContent: "space-between",
-  width: "700px",
+  width: "100%",
   marginBottom: "15px",
 };
 
 const fieldStyle = {
-  width: "600px",
+  width: "calc(100% - 100px)",
 };

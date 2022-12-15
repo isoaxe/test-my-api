@@ -29,7 +29,7 @@ function AboutText() {
 export default AboutText;
 
 const aboutTextWrapper = {
-  width: "70%",
+  width: "100%",
 };
 
 const textStyle = {

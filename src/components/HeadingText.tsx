@@ -11,5 +11,7 @@ function HeadingText() {
 export default HeadingText;
 
 const headingStyle = {
+  textAlign: "center",
+  width: "100%",
   marginBottom: "20px",
 };
