@@ -52,6 +52,7 @@ const wrapperStyle = {
   alignItems: "center",
   justifyContent: "space-between",
   width: "700px",
+  marginBottom: "15px",
 };
 
 const fieldStyle = {
