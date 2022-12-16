@@ -2,7 +2,7 @@ import { ChangeEvent } from "react";
 import { TextField } from "@mui/material";
 
 function RequestBody(props: any) {
-  const { requestBody, setRequestBody } = props;
+  const { requestBody, setRequestBody, requestType } = props;
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     setRequestBody(event.target.value);
@@ -13,6 +13,7 @@ function RequestBody(props: any) {
       label="Enter request body"
       value={requestBody}
       onChange={handleChange}
+      disabled={requestType === "get"}
       multiline
       minRows={6}
       sx={requestBodyStyle}

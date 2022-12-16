@@ -26,6 +26,7 @@ function App() {
         <RequestBody
           requestBody={requestBody}
           setRequestBody={setRequestBody}
+          requestType={requestType}
         />
         <RequestSelector
           requestType={requestType}
