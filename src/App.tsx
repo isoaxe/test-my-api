@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Box } from "@mui/material";
-import UrlSubmitter from "./components/UrlSubmitter";
-import ProxySelector from "./components/ProxySelector";
 import HeadingText from "./components/HeadingText";
 import AboutText from "./components/AboutText";
 import SampleUrls from "./components/SampleUrls";
+import UrlSubmitter from "./components/UrlSubmitter";
+import ProxySelector from "./components/ProxySelector";
 
 function App() {
   const [proxyUrl, setProxyUrl] = useState("");
