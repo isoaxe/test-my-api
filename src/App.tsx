@@ -19,11 +19,13 @@ function App() {
       <UrlSubmitter proxyUrl={proxyUrl} />
       <UrlSubmitter proxyUrl={proxyUrl} />
       <UrlSubmitter proxyUrl={proxyUrl} />
-      <ProxySelector proxyUrl={proxyUrl} setProxyUrl={setProxyUrl} />
-      <RequestSelector
-        requestType={requestType}
-        setRequestType={setRequestType}
-      />
+      <Box sx={selectorWrapperStyle}>
+        <ProxySelector proxyUrl={proxyUrl} setProxyUrl={setProxyUrl} />
+        <RequestSelector
+          requestType={requestType}
+          setRequestType={setRequestType}
+        />
+      </Box>
     </Box>
   );
 }
@@ -38,4 +40,11 @@ const appStyle = {
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
+};
+
+const selectorWrapperStyle = {
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  width: "100%",
 };
