@@ -5,9 +5,9 @@ import { FormControlLabel, FormControl, FormLabel } from "@mui/material";
 function RequestSelector(props: any) {
   const { requestType, setRequestType } = props;
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+  function handleChange(event: ChangeEvent<HTMLInputElement>) {
     setRequestType(event.target.value);
-  };
+  }
 
   return (
     <FormControl sx={radioGroupStyle}>
