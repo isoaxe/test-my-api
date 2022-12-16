@@ -29,4 +29,5 @@ export default RequestSelector;
 
 const radioGroupStyle = {
   margin: "20px",
+  minWidth: "100px",
 };

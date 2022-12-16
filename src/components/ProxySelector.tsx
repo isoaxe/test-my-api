@@ -38,4 +38,5 @@ export default ProxySelector;
 
 const radioGroupStyle = {
   margin: "20px",
+  minWidth: "100px",
 };
