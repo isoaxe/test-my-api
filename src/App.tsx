@@ -3,6 +3,7 @@ import UrlSubmitter from "./components/UrlSubmitter";
 import ProxySelector from "./components/ProxySelector";
 import HeadingText from "./components/HeadingText";
 import AboutText from "./components/AboutText";
+import SampleUrls from "./components/SampleUrls";
 import "./App.css";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <div className="App">
       <HeadingText />
       <AboutText />
+      <SampleUrls />
       <UrlSubmitter proxyUrl={proxyUrl} />
       <UrlSubmitter proxyUrl={proxyUrl} />
       <UrlSubmitter proxyUrl={proxyUrl} />
