@@ -5,9 +5,11 @@ import AboutText from "./components/AboutText";
 import SampleUrls from "./components/SampleUrls";
 import UrlSubmitter from "./components/UrlSubmitter";
 import ProxySelector from "./components/ProxySelector";
+import RequestSelector from "./components/RequestSelector";
 
 function App() {
   const [proxyUrl, setProxyUrl] = useState("");
+  const [requestType, setRequestType] = useState("get");
 
   return (
     <Box sx={appStyle}>
@@ -18,6 +20,10 @@ function App() {
       <UrlSubmitter proxyUrl={proxyUrl} />
       <UrlSubmitter proxyUrl={proxyUrl} />
       <ProxySelector proxyUrl={proxyUrl} setProxyUrl={setProxyUrl} />
+      <RequestSelector
+        requestType={requestType}
+        setRequestType={setRequestType}
+      />
     </Box>
   );
 }
