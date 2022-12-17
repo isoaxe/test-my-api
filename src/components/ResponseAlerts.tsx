@@ -5,12 +5,15 @@ function ResponseAlerts(props: any) {
   const [showResponse, setShowResponse] = useState(false);
   const alertStatus = useRef<AlertColor>("info");
 
-  const { response, responseCode } = props;
+  const { response, setResponse, responseCode, setResponseCode } = props;
   const vertical = "top";
   const horizontal = "center";
 
+  // Reset all state on close.
   function handleClose() {
     setShowResponse(false);
+    setResponse({});
+    setResponseCode(0);
   }
 
   useEffect(() => {
