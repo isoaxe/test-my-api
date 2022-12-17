@@ -9,6 +9,10 @@ function ResponseAlerts(props: any) {
   const vertical = "top";
   const horizontal = "center";
 
+  function handleClose() {
+    setShowResponse(false);
+  }
+
   useEffect(() => {
     if (responseCode) {
       setShowResponse(true);
@@ -29,7 +33,7 @@ function ResponseAlerts(props: any) {
   return (
     <Snackbar
       open={showResponse}
-      onClose={() => setShowResponse(false)}
+      onClose={handleClose}
       anchorOrigin={{ vertical, horizontal }}>
       <Alert severity={alertStatus.current} variant="filled" sx={alertStyle}>
         {responseCode && <AlertTitle>Status: {responseCode}</AlertTitle>}
