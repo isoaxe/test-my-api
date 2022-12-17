@@ -6,6 +6,7 @@ function ResponseAlerts(props: any) {
   const alertStatus = useRef<AlertColor>("info");
 
   const { response, setResponse, responseCode, setResponseCode } = props;
+  const { responseCodeText } = props;
   const vertical = "top";
   const horizontal = "center";
 
@@ -39,7 +40,11 @@ function ResponseAlerts(props: any) {
       onClose={handleClose}
       anchorOrigin={{ vertical, horizontal }}>
       <Alert severity={alertStatus.current} variant="filled" sx={alertStyle}>
-        {responseCode && <AlertTitle>Status: {responseCode}</AlertTitle>}
+        {responseCode && (
+          <AlertTitle>
+            Status: {responseCode} {responseCodeText}
+          </AlertTitle>
+        )}
         {
           // If response not empty then display contents. Else display text.
           Object.keys(response).length
