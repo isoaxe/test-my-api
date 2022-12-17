@@ -17,9 +17,9 @@ function RequestSelector(props: any) {
         name="request-type-options"
         value={requestType}
         onChange={handleChange}>
-        <FormControlLabel value={"get"} control={<Radio />} label="GET" />
-        <FormControlLabel value={"post"} control={<Radio />} label="POST" />
-        <FormControlLabel value={"put"} control={<Radio />} label="PUT" />
+        <FormControlLabel value={"GET"} control={<Radio />} label="GET" />
+        <FormControlLabel value={"POST"} control={<Radio />} label="POST" />
+        <FormControlLabel value={"PUT"} control={<Radio />} label="PUT" />
       </RadioGroup>
     </FormControl>
   );

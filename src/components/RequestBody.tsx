@@ -4,7 +4,7 @@ import { TextField } from "@mui/material";
 function RequestBody(props: any) {
   const { requestBody, setRequestBody, requestType } = props;
 
-  const isGetRequest = requestType === "get";
+  const isGetRequest = requestType === "GET";
   const getPlaceholder = "A GET request does not have a body";
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {

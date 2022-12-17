@@ -10,7 +10,7 @@ import RequestBody from "./components/RequestBody";
 
 function App() {
   const [proxyUrl, setProxyUrl] = useState("");
-  const [requestType, setRequestType] = useState("get");
+  const [requestType, setRequestType] = useState("GET");
   const [requestBody, setRequestBody] = useState("");
 
   return (
