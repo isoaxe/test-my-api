@@ -30,8 +30,6 @@ function UrlSubmitter(props: any) {
         const jsonRes = await res.json();
         setResponse(jsonRes);
         console.log(jsonRes);
-      } else {
-        setResponse({});
       }
     } catch (error) {
       console.log(error);
