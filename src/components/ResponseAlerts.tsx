@@ -10,10 +10,10 @@ function ResponseAlerts(props: any) {
   const horizontal = "center";
 
   useEffect(() => {
-    if (Object.keys(response).length) {
+    if (responseCode) {
       setShowResponse(true);
     }
-  }, [response]);
+  }, [responseCode]);
 
   useEffect(() => {
     const codeCategory = Math.floor(responseCode / 100);
