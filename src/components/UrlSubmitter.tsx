@@ -28,8 +28,7 @@ function UrlSubmitter(props: any) {
       setResponse(jsonRes);
       console.log(jsonRes);
     } catch (error) {
-      console.log("There was an error with the HTTP request :(");
-      console.error(error);
+      console.log(error);
     }
   }
 
