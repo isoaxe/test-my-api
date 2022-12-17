@@ -54,7 +54,12 @@ function App() {
           setRequestType={setRequestType}
         />
       </Box>
-      <ResponseAlerts response={response} responseCode={responseCode} />
+      <ResponseAlerts
+        response={response}
+        setResponse={setResponse}
+        responseCode={responseCode}
+        setResponseCode={setResponseCode}
+      />
     </Box>
   );
 }
