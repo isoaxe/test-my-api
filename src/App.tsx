@@ -7,6 +7,7 @@ import UrlSubmitter from "./components/UrlSubmitter";
 import ProxySelector from "./components/ProxySelector";
 import RequestSelector from "./components/RequestSelector";
 import RequestBody from "./components/RequestBody";
+import ResponseAlerts from "./components/ResponseAlerts";
 
 function App() {
   const [proxyUrl, setProxyUrl] = useState("");
@@ -45,6 +46,7 @@ function App() {
           setRequestType={setRequestType}
         />
       </Box>
+      <ResponseAlerts />
     </Box>
   );
 }
