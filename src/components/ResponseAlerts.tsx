@@ -19,11 +19,15 @@ function ResponseAlerts(props: any) {
       open={showResponse}
       onClose={() => setShowResponse(false)}
       anchorOrigin={{ vertical, horizontal }}>
-      <Alert severity="info" variant="filled">
-        {JSON.stringify(response)}
+      <Alert severity="info" variant="filled" sx={alertStyle}>
+        {JSON.stringify(response, null, 4)}
       </Alert>
     </Snackbar>
   );
 }
 
 export default ResponseAlerts;
+
+const alertStyle = {
+  whiteSpace: "pre",
+};
