@@ -17,25 +17,19 @@ function UrlSubmitter(props: any) {
 
   async function submitApiUrl(event: SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
-    let response;
     try {
+      let response;
       if (requestType === "GET") {
         response = await fetch(proxyUrl + apiUrl);
       } else {
         response = await fetch(proxyUrl + apiUrl, fetchOptions);
       }
+      const jsonRes = await response.json();
+      console.log(jsonRes);
     } catch (error) {
-      console.log("Result: API fetch request has failed");
+      console.log("There was an error with the HTTP request :(");
       console.error(error);
     }
-    if (response)
-      try {
-        const jsonRes = await response.json();
-        console.log(jsonRes);
-      } catch (error) {
-        console.log("Result: API request succeeded, but failed to parse JSON");
-        console.error(error);
-      }
   }
 
   return (
