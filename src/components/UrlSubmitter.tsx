@@ -5,7 +5,7 @@ function UrlSubmitter(props: any) {
   const [apiUrl, setApiUrl] = useState("");
 
   const { proxyUrl, requestType, requestBody } = props;
-  const { setResponse, setResponseCode } = props;
+  const { setResponse, setResponseCode, setResponseCodeText } = props;
 
   const fetchOptions = {
     method: requestType,
@@ -26,6 +26,7 @@ function UrlSubmitter(props: any) {
         res = await fetch(proxyUrl + apiUrl, fetchOptions);
       }
       setResponseCode(res.status);
+      setResponseCodeText(res.statusText);
       if (res.status === 200) {
         const jsonRes = await res.json();
         setResponse(jsonRes);
