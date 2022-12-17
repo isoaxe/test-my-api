@@ -18,9 +18,21 @@ function App() {
       <HeadingText />
       <AboutText />
       <SampleUrls />
-      <UrlSubmitter proxyUrl={proxyUrl} />
-      <UrlSubmitter proxyUrl={proxyUrl} />
-      <UrlSubmitter proxyUrl={proxyUrl} />
+      <UrlSubmitter
+        proxyUrl={proxyUrl}
+        requestType={requestType}
+        requestBody={requestBody}
+      />
+      <UrlSubmitter
+        proxyUrl={proxyUrl}
+        requestType={requestType}
+        requestBody={requestBody}
+      />
+      <UrlSubmitter
+        proxyUrl={proxyUrl}
+        requestType={requestType}
+        requestBody={requestBody}
+      />
       <Box sx={selectorWrapperStyle}>
         <ProxySelector proxyUrl={proxyUrl} setProxyUrl={setProxyUrl} />
         <RequestBody
