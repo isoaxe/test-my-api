@@ -13,9 +13,7 @@ function ResponseAlerts(props: any) {
     if (responseCode) {
       setShowResponse(true);
     }
-  }, [responseCode]);
 
-  useEffect(() => {
     const codeCategory = Math.floor(responseCode / 100);
     if (codeCategory === 2) {
       alertStatus.current = "success"; // HTTP code 200 range
