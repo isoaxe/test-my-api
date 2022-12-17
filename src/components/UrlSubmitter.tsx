@@ -18,13 +18,13 @@ function UrlSubmitter(props: any) {
   async function submitApiUrl(event: SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
     try {
-      let response;
+      let res;
       if (requestType === "GET") {
-        response = await fetch(proxyUrl + apiUrl);
+        res = await fetch(proxyUrl + apiUrl);
       } else {
-        response = await fetch(proxyUrl + apiUrl, fetchOptions);
+        res = await fetch(proxyUrl + apiUrl, fetchOptions);
       }
-      const jsonRes = await response.json();
+      const jsonRes = await res.json();
       setResponse(jsonRes);
       console.log(jsonRes);
     } catch (error) {
