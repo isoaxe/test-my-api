@@ -26,9 +26,11 @@ function UrlSubmitter(props: any) {
         res = await fetch(proxyUrl + apiUrl, fetchOptions);
       }
       setResponseCode(res.status);
-      const jsonRes = await res.json();
-      setResponse(jsonRes);
-      console.log(jsonRes);
+      if (res.status === 200) {
+        const jsonRes = await res.json();
+        setResponse(jsonRes);
+        console.log(jsonRes);
+      }
     } catch (error) {
       console.log(error);
     }
