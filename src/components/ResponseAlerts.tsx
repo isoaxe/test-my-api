@@ -35,7 +35,12 @@ function ResponseAlerts(props: any) {
       anchorOrigin={{ vertical, horizontal }}>
       <Alert severity={alertStatus.current} variant="filled" sx={alertStyle}>
         {responseCode && <AlertTitle>Status: {responseCode}</AlertTitle>}
-        {JSON.stringify(response, null, 4)}
+        {
+          // If response not empty then display contents. Else display text.
+          Object.keys(response).length
+            ? JSON.stringify(response, null, 4)
+            : "Check the browser console for more info"
+        }
       </Alert>
     </Snackbar>
   );
