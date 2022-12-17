@@ -14,6 +14,7 @@ function App() {
   const [requestType, setRequestType] = useState("GET");
   const [requestBody, setRequestBody] = useState("");
   const [response, setResponse] = useState({});
+  const [responseCode, setResponseCode] = useState(0);
 
   return (
     <Box sx={appStyle}>
@@ -25,18 +26,21 @@ function App() {
         requestType={requestType}
         requestBody={requestBody}
         setResponse={setResponse}
+        setResponseCode={setResponseCode}
       />
       <UrlSubmitter
         proxyUrl={proxyUrl}
         requestType={requestType}
         requestBody={requestBody}
         setResponse={setResponse}
+        setResponseCode={setResponseCode}
       />
       <UrlSubmitter
         proxyUrl={proxyUrl}
         requestType={requestType}
         requestBody={requestBody}
         setResponse={setResponse}
+        setResponseCode={setResponseCode}
       />
       <Box sx={selectorWrapperStyle}>
         <ProxySelector proxyUrl={proxyUrl} setProxyUrl={setProxyUrl} />
@@ -50,7 +54,7 @@ function App() {
           setRequestType={setRequestType}
         />
       </Box>
-      <ResponseAlerts response={response} />
+      <ResponseAlerts response={response} responseCode={responseCode} />
     </Box>
   );
 }
