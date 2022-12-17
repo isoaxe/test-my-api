@@ -4,7 +4,7 @@ import { Box, TextField, Button } from "@mui/material";
 function UrlSubmitter(props: any) {
   const [apiUrl, setApiUrl] = useState("");
 
-  const { proxyUrl, requestType, requestBody } = props;
+  const { proxyUrl, requestType, requestBody, setResponse } = props;
 
   const fetchOptions = {
     method: requestType,
@@ -25,6 +25,7 @@ function UrlSubmitter(props: any) {
         response = await fetch(proxyUrl + apiUrl, fetchOptions);
       }
       const jsonRes = await response.json();
+      setResponse(jsonRes);
       console.log(jsonRes);
     } catch (error) {
       console.log("There was an error with the HTTP request :(");
