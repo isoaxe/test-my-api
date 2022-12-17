@@ -4,7 +4,12 @@ import { Box, TextField, Button } from "@mui/material";
 function UrlSubmitter(props: any) {
   const [apiUrl, setApiUrl] = useState("");
 
-  const { proxyUrl } = props;
+  const { proxyUrl, requestType, requestBody } = props;
+
+  const fetchOptions = {
+    method: requestType,
+    body: requestBody,
+  };
 
   function handleApiUrl(event: ChangeEvent<HTMLInputElement>): void {
     setApiUrl(event.currentTarget.value);
@@ -12,21 +17,19 @@ function UrlSubmitter(props: any) {
 
   async function submitApiUrl(event: SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
-    let response;
     try {
-      response = await fetch(proxyUrl + apiUrl);
+      let response;
+      if (requestType === "GET") {
+        response = await fetch(proxyUrl + apiUrl);
+      } else {
+        response = await fetch(proxyUrl + apiUrl, fetchOptions);
+      }
+      const jsonRes = await response.json();
+      console.log(jsonRes);
     } catch (error) {
-      console.log("Result: API fetch request has failed");
+      console.log("There was an error with the HTTP request :(");
       console.error(error);
     }
-    if (response)
-      try {
-        const jsonRes = await response.json();
-        console.log(jsonRes);
-      } catch (error) {
-        console.log("Result: API request succeeded, but failed to parse JSON");
-        console.error(error);
-      }
   }
 
   return (

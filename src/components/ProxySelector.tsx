@@ -6,9 +6,9 @@ import { FIREBASE_PROXY, FLY_PROXY } from "../util/urls";
 function ProxySelector(props: any) {
   const { proxyUrl, setProxyUrl } = props;
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+  function handleChange(event: ChangeEvent<HTMLInputElement>) {
     setProxyUrl(event.target.value);
-  };
+  }
 
   return (
     <FormControl sx={radioGroupStyle}>
@@ -38,4 +38,5 @@ export default ProxySelector;
 
 const radioGroupStyle = {
   margin: "20px",
+  minWidth: "100px",
 };

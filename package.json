@@ -1,7 +1,7 @@
 {
   "name": "test-my-api",
-  "version": "2.2.0",
-  "private": true,
+  "version": "2.3.0",
+  "private": false,
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
