@@ -64,6 +64,7 @@ function App() {
         responseCode={responseCode}
         setResponseCode={setResponseCode}
         responseCodeText={responseCodeText}
+        setResponseCodeText={setResponseCodeText}
       />
     </Box>
   );
