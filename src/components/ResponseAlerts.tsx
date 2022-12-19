@@ -6,7 +6,7 @@ function ResponseAlerts(props: any) {
   const alertStatus = useRef<AlertColor>("info");
 
   const { response, setResponse, responseCode, setResponseCode } = props;
-  const { responseCodeText } = props;
+  const { responseCodeText, setResponseCodeText } = props;
   const vertical = "top";
   const horizontal = "center";
 
@@ -15,6 +15,7 @@ function ResponseAlerts(props: any) {
     setShowResponse(false);
     setResponse({});
     setResponseCode(0);
+    setResponseCodeText("");
   }
 
   useEffect(() => {
