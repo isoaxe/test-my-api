@@ -11,8 +11,7 @@ function AboutText() {
         server.
       </Typography>
       <Typography variant="body1" component="p" sx={textStyle}>
-        Results are logged in the browser console for now. Any comments or
-        feature requests, let me know in the contact form on my{" "}
+        Any comments or feature requests, let me know in the contact form on my{" "}
         <a
           href="https://www.lucasoconnell.net"
           target="_blank"
