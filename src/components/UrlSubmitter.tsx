@@ -33,6 +33,8 @@ function UrlSubmitter(props: any) {
         console.log(jsonRes);
       }
     } catch (error) {
+      setResponseCode(550);
+      setResponseCodeText("Unknown Error");
       console.log(error);
     }
   }
