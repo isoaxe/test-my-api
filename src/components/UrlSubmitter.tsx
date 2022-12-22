@@ -5,6 +5,7 @@ function UrlSubmitter(props: any) {
   const [apiUrl, setApiUrl] = useState("");
 
   const { proxyUrl, requestType, requestBody } = props;
+  const { setResponse, setResponseCode, setResponseCodeText } = props;
 
   const fetchOptions = {
     method: requestType,
@@ -18,17 +19,23 @@ function UrlSubmitter(props: any) {
   async function submitApiUrl(event: SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
     try {
-      let response;
+      let res;
       if (requestType === "GET") {
-        response = await fetch(proxyUrl + apiUrl);
+        res = await fetch(proxyUrl + apiUrl);
       } else {
-        response = await fetch(proxyUrl + apiUrl, fetchOptions);
+        res = await fetch(proxyUrl + apiUrl, fetchOptions);
       }
-      const jsonRes = await response.json();
-      console.log(jsonRes);
+      setResponseCode(res.status);
+      setResponseCodeText(res.statusText);
+      if (res.status === 200) {
+        const jsonRes = await res.json();
+        setResponse(jsonRes);
+        console.log(jsonRes);
+      }
     } catch (error) {
-      console.log("There was an error with the HTTP request :(");
-      console.error(error);
+      setResponseCode(550);
+      setResponseCodeText("Unknown Error");
+      console.log(error);
     }
   }
 
