@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Box } from "@mui/material";
+import { GlobalContext } from "./util/GlobalContext";
 import HeadingText from "./components/HeadingText";
 import AboutText from "./components/AboutText";
 import SampleUrls from "./components/SampleUrls";
@@ -16,57 +17,55 @@ function App() {
   const [response, setResponse] = useState({});
   const [responseCode, setResponseCode] = useState(0);
   const [responseCodeText, setResponseCodeText] = useState("");
+  const globalContext = {
+    proxyUrl,
+    requestType,
+    requestBody,
+  };
 
   return (
-    <Box sx={appStyle}>
-      <HeadingText />
-      <AboutText />
-      <SampleUrls />
-      <UrlSubmitter
-        proxyUrl={proxyUrl}
-        requestType={requestType}
-        requestBody={requestBody}
-        setResponse={setResponse}
-        setResponseCode={setResponseCode}
-        setResponseCodeText={setResponseCodeText}
-      />
-      <UrlSubmitter
-        proxyUrl={proxyUrl}
-        requestType={requestType}
-        requestBody={requestBody}
-        setResponse={setResponse}
-        setResponseCode={setResponseCode}
-        setResponseCodeText={setResponseCodeText}
-      />
-      <UrlSubmitter
-        proxyUrl={proxyUrl}
-        requestType={requestType}
-        requestBody={requestBody}
-        setResponse={setResponse}
-        setResponseCode={setResponseCode}
-        setResponseCodeText={setResponseCodeText}
-      />
-      <Box sx={selectorWrapperStyle}>
-        <ProxySelector proxyUrl={proxyUrl} setProxyUrl={setProxyUrl} />
-        <RequestBody
-          requestBody={requestBody}
-          setRequestBody={setRequestBody}
-          requestType={requestType}
+    <GlobalContext.Provider value={globalContext}>
+      <Box sx={appStyle}>
+        <HeadingText />
+        <AboutText />
+        <SampleUrls />
+        <UrlSubmitter
+          setResponse={setResponse}
+          setResponseCode={setResponseCode}
+          setResponseCodeText={setResponseCodeText}
         />
-        <RequestSelector
-          requestType={requestType}
-          setRequestType={setRequestType}
+        <UrlSubmitter
+          setResponse={setResponse}
+          setResponseCode={setResponseCode}
+          setResponseCodeText={setResponseCodeText}
+        />
+        <UrlSubmitter
+          setResponse={setResponse}
+          setResponseCode={setResponseCode}
+          setResponseCodeText={setResponseCodeText}
+        />
+        <Box sx={selectorWrapperStyle}>
+          <ProxySelector proxyUrl={proxyUrl} setProxyUrl={setProxyUrl} />
+          <RequestBody
+            requestBody={requestBody}
+            setRequestBody={setRequestBody}
+            requestType={requestType}
+          />
+          <RequestSelector
+            requestType={requestType}
+            setRequestType={setRequestType}
+          />
+        </Box>
+        <ResponseAlerts
+          response={response}
+          setResponse={setResponse}
+          responseCode={responseCode}
+          setResponseCode={setResponseCode}
+          responseCodeText={responseCodeText}
+          setResponseCodeText={setResponseCodeText}
         />
       </Box>
-      <ResponseAlerts
-        response={response}
-        setResponse={setResponse}
-        responseCode={responseCode}
-        setResponseCode={setResponseCode}
-        responseCodeText={responseCodeText}
-        setResponseCodeText={setResponseCodeText}
-      />
-    </Box>
+    </GlobalContext.Provider>
   );
 }
 
