@@ -1,8 +1,10 @@
-import { ChangeEvent } from "react";
+import { useContext, ChangeEvent } from "react";
 import { TextField } from "@mui/material";
+import { GlobalContext } from "../util/GlobalContext";
 
 function RequestBody(props: any) {
-  const { requestBody, setRequestBody, requestType } = props;
+  const { setRequestBody } = props;
+  const { requestBody, requestType } = useContext(GlobalContext);
 
   const isGetRequest = requestType === "GET";
   const getPlaceholder = "A GET request does not have a body";
