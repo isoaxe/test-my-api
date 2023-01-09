@@ -45,16 +45,9 @@ function App() {
           setResponseCodeText={setResponseCodeText}
         />
         <Box sx={selectorWrapperStyle}>
-          <ProxySelector proxyUrl={proxyUrl} setProxyUrl={setProxyUrl} />
-          <RequestBody
-            requestBody={requestBody}
-            setRequestBody={setRequestBody}
-            requestType={requestType}
-          />
-          <RequestSelector
-            requestType={requestType}
-            setRequestType={setRequestType}
-          />
+          <ProxySelector setProxyUrl={setProxyUrl} />
+          <RequestBody setRequestBody={setRequestBody} />
+          <RequestSelector setRequestType={setRequestType} />
         </Box>
         <ResponseAlerts
           response={response}
