@@ -21,6 +21,9 @@ function App() {
     proxyUrl,
     requestType,
     requestBody,
+    setResponse,
+    setResponseCode,
+    setResponseCodeText,
   };
 
   return (
