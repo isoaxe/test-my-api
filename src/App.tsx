@@ -32,21 +32,9 @@ function App() {
         <HeadingText />
         <AboutText />
         <SampleUrls />
-        <UrlSubmitter
-          setResponse={setResponse}
-          setResponseCode={setResponseCode}
-          setResponseCodeText={setResponseCodeText}
-        />
-        <UrlSubmitter
-          setResponse={setResponse}
-          setResponseCode={setResponseCode}
-          setResponseCodeText={setResponseCodeText}
-        />
-        <UrlSubmitter
-          setResponse={setResponse}
-          setResponseCode={setResponseCode}
-          setResponseCodeText={setResponseCodeText}
-        />
+        <UrlSubmitter />
+        <UrlSubmitter />
+        <UrlSubmitter />
         <Box sx={selectorWrapperStyle}>
           <ProxySelector setProxyUrl={setProxyUrl} />
           <RequestBody setRequestBody={setRequestBody} />
@@ -54,11 +42,8 @@ function App() {
         </Box>
         <ResponseAlerts
           response={response}
-          setResponse={setResponse}
           responseCode={responseCode}
-          setResponseCode={setResponseCode}
           responseCodeText={responseCodeText}
-          setResponseCodeText={setResponseCodeText}
         />
       </Box>
     </GlobalContext.Provider>
