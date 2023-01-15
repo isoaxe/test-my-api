@@ -5,9 +5,9 @@ export const GlobalContext = createContext<ContextProps>({
   proxyUrl: "",
   requestType: "GET",
   requestBody: "",
-  setResponse: () => <object>{},
-  setResponseCode: () => <number>{},
-  setResponseCodeText: () => <string>{},
+  setResponse: () => <object>{}, // eslint-disable-line
+  setResponseCode: () => <number>{}, // eslint-disable-line
+  setResponseCodeText: () => <string>{}, // eslint-disable-line
 });
 
 interface ContextProps {
