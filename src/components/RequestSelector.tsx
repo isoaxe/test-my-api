@@ -1,11 +1,11 @@
 import { useContext, ChangeEvent } from "react";
 import { Radio, RadioGroup } from "@mui/material";
 import { FormControlLabel, FormControl, FormLabel } from "@mui/material";
-import { GlobalContext } from "../util/GlobalContext";
+import { UrlSubContext } from "../util/GlobalContext";
 
 function RequestSelector(props: any) {
   const { setRequestType } = props;
-  const { requestType } = useContext(GlobalContext);
+  const { requestType } = useContext(UrlSubContext);
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     setRequestType(event.target.value);

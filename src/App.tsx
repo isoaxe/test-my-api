@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Box } from "@mui/material";
-import { GlobalContext } from "./util/GlobalContext";
+import { UrlSubContext } from "./util/GlobalContext";
 import HeadingText from "./components/HeadingText";
 import AboutText from "./components/AboutText";
 import SampleUrls from "./components/SampleUrls";
@@ -27,7 +27,7 @@ function App() {
   };
 
   return (
-    <GlobalContext.Provider value={globalContext}>
+    <UrlSubContext.Provider value={globalContext}>
       <Box sx={appStyle}>
         <HeadingText />
         <AboutText />
@@ -46,7 +46,7 @@ function App() {
           responseCodeText={responseCodeText}
         />
       </Box>
-    </GlobalContext.Provider>
+    </UrlSubContext.Provider>
   );
 }
 

@@ -2,11 +2,11 @@ import { useContext, ChangeEvent } from "react";
 import { Radio, RadioGroup } from "@mui/material";
 import { FormControlLabel, FormControl, FormLabel } from "@mui/material";
 import { FIREBASE_PROXY, FLY_PROXY } from "../util/urls";
-import { GlobalContext } from "../util/GlobalContext";
+import { UrlSubContext } from "../util/GlobalContext";
 
 function ProxySelector(props: any) {
   const { setProxyUrl } = props;
-  const { proxyUrl } = useContext(GlobalContext);
+  const { proxyUrl } = useContext(UrlSubContext);
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     setProxyUrl(event.target.value);

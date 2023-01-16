@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext, useRef } from "react";
 import { Snackbar, Alert, AlertTitle, AlertColor } from "@mui/material";
-import { GlobalContext } from "../util/GlobalContext";
+import { UrlSubContext } from "../util/GlobalContext";
 
 function ResponseAlerts(props: any) {
   const [showResponse, setShowResponse] = useState(false);
@@ -8,7 +8,7 @@ function ResponseAlerts(props: any) {
 
   const { response, responseCode, responseCodeText } = props;
   const { setResponse, setResponseCode, setResponseCodeText } =
-    useContext(GlobalContext);
+    useContext(UrlSubContext);
 
   const vertical = "top";
   const horizontal = "center";

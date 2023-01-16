@@ -1,6 +1,6 @@
 import { useState, useContext, ChangeEvent, SyntheticEvent } from "react";
 import { Box, TextField, Button } from "@mui/material";
-import { GlobalContext } from "../util/GlobalContext";
+import { UrlSubContext } from "../util/GlobalContext";
 
 function UrlSubmitter() {
   const [apiUrl, setApiUrl] = useState("");
@@ -12,7 +12,7 @@ function UrlSubmitter() {
     setResponse,
     setResponseCode,
     setResponseCodeText,
-  } = useContext(GlobalContext);
+  } = useContext(UrlSubContext);
 
   const fetchOptions = {
     method: requestType,

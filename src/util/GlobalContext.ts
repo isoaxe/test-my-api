@@ -1,7 +1,7 @@
 import { createContext } from "react";
 import { Dispatch, SetStateAction } from "react";
 
-export const GlobalContext = createContext<ContextProps>({
+export const UrlSubContext = createContext<ContextProps>({
   proxyUrl: "",
   requestType: "GET",
   requestBody: "",
