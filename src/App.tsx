@@ -17,7 +17,7 @@ function App() {
   const [response, setResponse] = useState({});
   const [responseCode, setResponseCode] = useState(0);
   const [responseCodeText, setResponseCodeText] = useState("");
-  const globalContext = {
+  const urlSubContext = {
     proxyUrl,
     requestType,
     requestBody,
@@ -27,7 +27,7 @@ function App() {
   };
 
   return (
-    <UrlSubContext.Provider value={globalContext}>
+    <UrlSubContext.Provider value={urlSubContext}>
       <Box sx={appStyle}>
         <HeadingText />
         <AboutText />
