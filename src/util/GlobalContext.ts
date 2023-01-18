@@ -1,7 +1,7 @@
 import { createContext } from "react";
 import { Dispatch, SetStateAction } from "react";
 
-export const UrlSubContext = createContext<ContextProps>({
+export const UrlSubContext = createContext<UrlSubState>({
   proxyUrl: "",
   requestType: "GET",
   requestBody: "",
@@ -10,7 +10,7 @@ export const UrlSubContext = createContext<ContextProps>({
   setResponseCodeText: () => <string>{}, // eslint-disable-line
 });
 
-interface ContextProps {
+interface UrlSubState {
   proxyUrl: string;
   requestType: string;
   requestBody: string;
