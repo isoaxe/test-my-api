@@ -1,11 +1,18 @@
-import { useState, ChangeEvent, SyntheticEvent } from "react";
+import { useState, useContext, ChangeEvent, SyntheticEvent } from "react";
 import { Box, TextField, Button } from "@mui/material";
+import { UrlSubContext } from "../util/GlobalContext";
 
-function UrlSubmitter(props: any) {
+function UrlSubmitter() {
   const [apiUrl, setApiUrl] = useState("");
 
-  const { proxyUrl, requestType, requestBody } = props;
-  const { setResponse, setResponseCode, setResponseCodeText } = props;
+  const {
+    proxyUrl,
+    requestType,
+    requestBody,
+    setResponse,
+    setResponseCode,
+    setResponseCodeText,
+  } = useContext(UrlSubContext);
 
   const fetchOptions = {
     method: requestType,

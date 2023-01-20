@@ -1,6 +1,6 @@
 {
   "name": "test-my-api",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "private": false,
   "dependencies": {
     "@emotion/react": "^11.10.5",

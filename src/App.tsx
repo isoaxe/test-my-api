@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Box } from "@mui/material";
+import { UrlSubContext } from "./util/GlobalContext";
 import HeadingText from "./components/HeadingText";
 import AboutText from "./components/AboutText";
 import SampleUrls from "./components/SampleUrls";
@@ -16,57 +17,36 @@ function App() {
   const [response, setResponse] = useState({});
   const [responseCode, setResponseCode] = useState(0);
   const [responseCodeText, setResponseCodeText] = useState("");
+  const urlSubContext = {
+    proxyUrl,
+    requestType,
+    requestBody,
+    setResponse,
+    setResponseCode,
+    setResponseCodeText,
+  };
 
   return (
-    <Box sx={appStyle}>
-      <HeadingText />
-      <AboutText />
-      <SampleUrls />
-      <UrlSubmitter
-        proxyUrl={proxyUrl}
-        requestType={requestType}
-        requestBody={requestBody}
-        setResponse={setResponse}
-        setResponseCode={setResponseCode}
-        setResponseCodeText={setResponseCodeText}
-      />
-      <UrlSubmitter
-        proxyUrl={proxyUrl}
-        requestType={requestType}
-        requestBody={requestBody}
-        setResponse={setResponse}
-        setResponseCode={setResponseCode}
-        setResponseCodeText={setResponseCodeText}
-      />
-      <UrlSubmitter
-        proxyUrl={proxyUrl}
-        requestType={requestType}
-        requestBody={requestBody}
-        setResponse={setResponse}
-        setResponseCode={setResponseCode}
-        setResponseCodeText={setResponseCodeText}
-      />
-      <Box sx={selectorWrapperStyle}>
-        <ProxySelector proxyUrl={proxyUrl} setProxyUrl={setProxyUrl} />
-        <RequestBody
-          requestBody={requestBody}
-          setRequestBody={setRequestBody}
-          requestType={requestType}
-        />
-        <RequestSelector
-          requestType={requestType}
-          setRequestType={setRequestType}
+    <UrlSubContext.Provider value={urlSubContext}>
+      <Box sx={appStyle}>
+        <HeadingText />
+        <AboutText />
+        <SampleUrls />
+        <UrlSubmitter />
+        <UrlSubmitter />
+        <UrlSubmitter />
+        <Box sx={selectorWrapperStyle}>
+          <ProxySelector setProxyUrl={setProxyUrl} />
+          <RequestBody setRequestBody={setRequestBody} />
+          <RequestSelector setRequestType={setRequestType} />
+        </Box>
+        <ResponseAlerts
+          response={response}
+          responseCode={responseCode}
+          responseCodeText={responseCodeText}
         />
       </Box>
-      <ResponseAlerts
-        response={response}
-        setResponse={setResponse}
-        responseCode={responseCode}
-        setResponseCode={setResponseCode}
-        responseCodeText={responseCodeText}
-        setResponseCodeText={setResponseCodeText}
-      />
-    </Box>
+    </UrlSubContext.Provider>
   );
 }
 
