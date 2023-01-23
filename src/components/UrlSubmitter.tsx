@@ -27,11 +27,8 @@ function UrlSubmitter() {
     event.preventDefault();
     try {
       let res;
-      if (requestType === "GET") {
-        res = await fetch(proxyUrl + apiUrl);
-      } else {
-        res = await fetch(proxyUrl + apiUrl, fetchOptions);
-      }
+      if (requestType === "GET") res = await fetch(proxyUrl + apiUrl);
+      else res = await fetch(proxyUrl + apiUrl, fetchOptions);
       setResponseCode(res.status);
       setResponseCodeText(res.statusText);
       if (res.status === 200) {
