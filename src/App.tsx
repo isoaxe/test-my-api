@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box } from "@mui/material";
+import { Box, CircularProgress } from "@mui/material";
 import { UrlSubContext } from "./util/GlobalContext";
 import HeadingText from "./components/HeadingText";
 import AboutText from "./components/AboutText";
@@ -45,6 +45,7 @@ function App() {
           responseCode={responseCode}
           responseCodeText={responseCodeText}
         />
+        <CircularProgress sx={spinnerStyle} />
       </Box>
     </UrlSubContext.Provider>
   );
@@ -67,4 +68,10 @@ const selectorWrapperStyle = {
   flexDirection: "row",
   justifyContent: "space-between",
   width: "100%",
+};
+
+const spinnerStyle = {
+  position: "absolute",
+  left: "50%",
+  top: "50%",
 };
