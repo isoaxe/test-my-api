@@ -17,6 +17,7 @@ function App() {
   const [response, setResponse] = useState({});
   const [responseCode, setResponseCode] = useState(0);
   const [responseCodeText, setResponseCodeText] = useState("");
+  const [spinnerOn, setSpinnerOn] = useState(false);
   const urlSubContext = {
     proxyUrl,
     requestType,
@@ -45,7 +46,7 @@ function App() {
           responseCode={responseCode}
           responseCodeText={responseCodeText}
         />
-        <CircularProgress sx={spinnerStyle} />
+        {spinnerOn ? <CircularProgress sx={spinnerStyle} /> : null}
       </Box>
     </UrlSubContext.Provider>
   );
