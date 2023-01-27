@@ -25,6 +25,7 @@ function App() {
     setResponse,
     setResponseCode,
     setResponseCodeText,
+    setSpinnerOn,
   };
 
   return (
