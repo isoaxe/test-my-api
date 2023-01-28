@@ -12,6 +12,7 @@ function UrlSubmitter() {
     setResponse,
     setResponseCode,
     setResponseCodeText,
+    setSpinnerOn,
   } = useContext(UrlSubContext);
 
   const fetchOptions = {
@@ -25,6 +26,7 @@ function UrlSubmitter() {
 
   async function submitApiUrl(event: SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
+    setSpinnerOn(true);
     try {
       let res;
       if (requestType === "GET") res = await fetch(proxyUrl + apiUrl);
@@ -41,6 +43,7 @@ function UrlSubmitter() {
       setResponseCodeText("Unknown Error");
       console.log(error);
     }
+    setSpinnerOn(false);
   }
 
   return (
