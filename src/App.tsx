@@ -22,6 +22,7 @@ function App() {
     proxyUrl,
     requestType,
     requestBody,
+    spinnerOn,
     setResponse,
     setResponseCode,
     setResponseCodeText,
