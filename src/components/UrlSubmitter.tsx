@@ -9,6 +9,7 @@ function UrlSubmitter() {
     proxyUrl,
     requestType,
     requestBody,
+    spinnerOn,
     setResponse,
     setResponseCode,
     setResponseCodeText,
@@ -54,7 +55,7 @@ function UrlSubmitter() {
         onChange={handleApiUrl}
         sx={fieldStyle}
       />
-      <Button variant="outlined" type="submit">
+      <Button variant="outlined" type="submit" disabled={spinnerOn}>
         Run
       </Button>
     </Box>
