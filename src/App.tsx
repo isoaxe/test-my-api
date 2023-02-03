@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box } from "@mui/material";
+import { Box, CircularProgress } from "@mui/material";
 import { UrlSubContext } from "./util/GlobalContext";
 import HeadingText from "./components/HeadingText";
 import AboutText from "./components/AboutText";
@@ -17,13 +17,16 @@ function App() {
   const [response, setResponse] = useState({});
   const [responseCode, setResponseCode] = useState(0);
   const [responseCodeText, setResponseCodeText] = useState("");
+  const [spinnerOn, setSpinnerOn] = useState(false);
   const urlSubContext = {
     proxyUrl,
     requestType,
     requestBody,
+    spinnerOn,
     setResponse,
     setResponseCode,
     setResponseCodeText,
+    setSpinnerOn,
   };
 
   return (
@@ -45,6 +48,7 @@ function App() {
           responseCode={responseCode}
           responseCodeText={responseCodeText}
         />
+        {spinnerOn ? <CircularProgress sx={spinnerStyle} /> : null}
       </Box>
     </UrlSubContext.Provider>
   );
@@ -67,4 +71,10 @@ const selectorWrapperStyle = {
   flexDirection: "row",
   justifyContent: "space-between",
   width: "100%",
+};
+
+const spinnerStyle = {
+  position: "absolute",
+  left: "50%",
+  top: "50%",
 };

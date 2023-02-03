@@ -9,9 +9,11 @@ function UrlSubmitter() {
     proxyUrl,
     requestType,
     requestBody,
+    spinnerOn,
     setResponse,
     setResponseCode,
     setResponseCodeText,
+    setSpinnerOn,
   } = useContext(UrlSubContext);
 
   const fetchOptions = {
@@ -25,13 +27,11 @@ function UrlSubmitter() {
 
   async function submitApiUrl(event: SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
+    setSpinnerOn(true);
     try {
       let res;
-      if (requestType === "GET") {
-        res = await fetch(proxyUrl + apiUrl);
-      } else {
-        res = await fetch(proxyUrl + apiUrl, fetchOptions);
-      }
+      if (requestType === "GET") res = await fetch(proxyUrl + apiUrl);
+      else res = await fetch(proxyUrl + apiUrl, fetchOptions);
       setResponseCode(res.status);
       setResponseCodeText(res.statusText);
       if (res.status === 200) {
@@ -44,6 +44,7 @@ function UrlSubmitter() {
       setResponseCodeText("Unknown Error");
       console.log(error);
     }
+    setSpinnerOn(false);
   }
 
   return (
@@ -54,7 +55,7 @@ function UrlSubmitter() {
         onChange={handleApiUrl}
         sx={fieldStyle}
       />
-      <Button variant="outlined" type="submit">
+      <Button variant="outlined" type="submit" disabled={spinnerOn}>
         Run
       </Button>
     </Box>
