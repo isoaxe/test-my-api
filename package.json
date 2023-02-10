@@ -1,6 +1,6 @@
 {
   "name": "test-my-api",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "private": false,
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -22,7 +22,6 @@
     "@types/react-dom": "^18.0.9",
     "@typescript-eslint/eslint-plugin": "^5.46.0",
     "@typescript-eslint/parser": "^5.46.0",
-    "concurrently": "^7.6.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "2.8.1",
@@ -31,14 +30,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build-all": "cd functions && npm run build && cd .. && npm run build",
-    "dev": "conc 'npm start' 'cd functions && npm run watch' 'cd functions && npm run serve'",
     "lint": "eslint --ext .js,.ts,.tsx .",
     "pretty": "npx prettier --write .",
-    "serve": "npm run build-all && firebase emulators:start",
+    "serve": "npm run build && firebase emulators:start",
     "deploy": "npm run build && firebase deploy --only hosting",
-    "deploy-all": "npm run build && firebase deploy",
-    "install-all": "npm install && cd functions && npm install && cd ..",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
