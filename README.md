@@ -12,9 +12,9 @@ Built using React, TypeScript and Material UI for the frontend. Hosted with Fire
 
 From the root directory, run the following:
 
-### `npm run install-all`
+### `npm install`
 
-Installs all required node packages in the root and `functions` directories.
+Installs all required node packages.
 
 ### `npm run dev`
 
