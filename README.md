@@ -16,6 +16,6 @@ From the root directory, run the following:
 
 Installs all required node packages.
 
-### `npm run dev`
+### `npm start`
 
-Starts the app in development mode. This re-renders the UI when changes are made and spins up a server for testing. Does not build any files for production (i.e. does not transpile TypeScript to plain JavaScript as would be required before deployment).
+Starts the app in development mode. This re-renders the UI when changes are made. Does not build any files for production (i.e. does not transpile TypeScript to plain JavaScript as would be required before deployment).
