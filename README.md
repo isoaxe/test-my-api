@@ -2,6 +2,8 @@
 
 This is a utility to test that API endpoints are returning the value that the user expects. A specific use case is to test a request that has been prepended by [`cors-server`](https://github.com/isoaxe/cors-server) before a user forks that project to host their own server.
 
+You can give the remote-hosted version a go [here](https://test-my-api-endpoint.web.app). If local hosting is desired, fork the project and follow the **Project Setup** steps outlined below.
+
 
 ## Technology
 
