@@ -12,6 +12,7 @@ function ResponseAlerts(props: any) {
 
   const vertical = "top";
   const horizontal = "center";
+  const code = responseCode === 550 ? "" : responseCode;
 
   // Reset all state on close.
   function handleClose() {
@@ -46,7 +47,7 @@ function ResponseAlerts(props: any) {
       <Alert severity={alertStatus.current} variant="filled" sx={alertStyle}>
         {responseCode && (
           <AlertTitle>
-            Status: {responseCode} {responseCodeText}
+            Status: {code} {responseCodeText}
           </AlertTitle>
         )}
         {
