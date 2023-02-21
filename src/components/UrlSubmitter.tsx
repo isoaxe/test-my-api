@@ -41,7 +41,7 @@ function UrlSubmitter() {
       }
     } catch (error) {
       setResponseCode(550);
-      setResponseCodeText("Unknown Error");
+      setResponseCodeText("Unknown Server Error");
       console.log(error);
     }
     setSpinnerOn(false);
