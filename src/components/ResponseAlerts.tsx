@@ -1,10 +1,10 @@
-import { useState, useEffect, useContext, useRef } from "react";
-import { Snackbar, Alert, AlertTitle, AlertColor } from "@mui/material";
+import { useState, useEffect, useContext } from "react";
+import { Snackbar, Alert, AlertTitle } from "@mui/material";
 import { UrlSubContext } from "../util/GlobalContext";
 
 function ResponseAlerts(props: any) {
   const [showResponse, setShowResponse] = useState(false);
-  const alertStatus = useRef<AlertColor>("info");
+  const [alertStatus, setAlertStatus] = useState<any>("info");
 
   const { response, responseCode, responseCodeText } = props;
   const { setResponse, setResponseCode, setResponseCodeText } =
@@ -29,13 +29,13 @@ function ResponseAlerts(props: any) {
 
     const codeCategory = Math.floor(responseCode / 100);
     if (codeCategory === 2) {
-      alertStatus.current = "success"; // HTTP code 200 range
+      setAlertStatus("success"); // HTTP code 200 range
     } else if (codeCategory === 4) {
-      alertStatus.current = "warning"; // HTTP code 400 range
+      setAlertStatus("warning"); // HTTP code 400 range
     } else if (codeCategory === 5) {
-      alertStatus.current = "error"; // HTTP code 500 range
+      setAlertStatus("error"); // HTTP code 500 range
     } else {
-      alertStatus.current = "info";
+      setAlertStatus("info");
     }
   }, [responseCode]);
 
@@ -44,7 +44,7 @@ function ResponseAlerts(props: any) {
       open={showResponse}
       onClose={handleClose}
       anchorOrigin={{ vertical, horizontal }}>
-      <Alert severity={alertStatus.current} variant="filled" sx={alertStyle}>
+      <Alert severity={alertStatus} variant="filled" sx={alertStyle}>
         {responseCode && (
           <AlertTitle>
             Status: {code} {responseCodeText}
