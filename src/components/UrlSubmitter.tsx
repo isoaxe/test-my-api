@@ -39,9 +39,11 @@ function UrlSubmitter() {
         setResponse(jsonRes);
         console.log(jsonRes);
       }
-    } catch (error) {
+    } catch (error: any) {
       setResponseCode(550);
-      setResponseCodeText("Unknown Server Error");
+      if (error.toString().includes("SyntaxError"))
+        setResponseCodeText("JSON not returned from server");
+      else setResponseCodeText("Unknown Server Error");
       console.log(error);
     }
     setSpinnerOn(false);
