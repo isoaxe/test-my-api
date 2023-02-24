@@ -28,15 +28,10 @@ function ResponseAlerts(props: any) {
     }
 
     const codeCategory = Math.floor(responseCode / 100);
-    if (codeCategory === 2) {
-      setAlertStatus("success"); // HTTP code 200 range
-    } else if (codeCategory === 4) {
-      setAlertStatus("warning"); // HTTP code 400 range
-    } else if (codeCategory === 5) {
-      setAlertStatus("error"); // HTTP code 500 range
-    } else {
-      setAlertStatus("info");
-    }
+    if (codeCategory === 2) setAlertStatus("success"); // HTTP code 200 range
+    else if (codeCategory === 4) setAlertStatus("warning"); // 400 range
+    else if (codeCategory === 5) setAlertStatus("error"); // 500 range
+    else setAlertStatus("info");
   }, [responseCode]);
 
   return (
