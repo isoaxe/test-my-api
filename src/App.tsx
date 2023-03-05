@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Box, CircularProgress } from "@mui/material";
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 import { UrlSubContext } from "./util/GlobalContext";
 import HeadingText from "./components/HeadingText";
 import AboutText from "./components/AboutText";
@@ -9,6 +11,19 @@ import ProxySelector from "./components/ProxySelector";
 import RequestSelector from "./components/RequestSelector";
 import RequestBody from "./components/RequestBody";
 import ResponseAlerts from "./components/ResponseAlerts";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAEh5E6qmrJZOPjsudUnpu236VmA0WskDg",
+  authDomain: "test-my-api-endpoint.firebaseapp.com",
+  projectId: "test-my-api-endpoint",
+  storageBucket: "test-my-api-endpoint.appspot.com",
+  messagingSenderId: "611583944761",
+  appId: "1:611583944761:web:1537f56276397013b185e8",
+  measurementId: "G-8H5W31RTL9",
+};
+
+const app = initializeApp(firebaseConfig);
+getAnalytics(app);
 
 function App() {
   const [proxyUrl, setProxyUrl] = useState("");
